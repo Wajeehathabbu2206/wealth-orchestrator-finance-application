@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wealthdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: Wajeeha_2006
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # <-- TEMPORARY: Reset DB tables
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+security:
+  jwt:
+    secret: "change-this-secret-key-to-any-long-random-string"
+    expiration: 315360000000   # 1 Day
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG

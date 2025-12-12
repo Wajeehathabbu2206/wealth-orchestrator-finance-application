@@ -1,0 +1,67 @@
+/* App full container */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #020617;
+  color: #ffffff;
+}
+
+/* Sidebar stays fixed */
+.sidebar {
+  width: 260px;
+  background-color: #0f172a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.main-content {
+  margin-left: 260px; /* Sidebar width only */
+  padding: 30px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #020617;
+  box-sizing: border-box;
+}
+
+/* Headings */
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  color: #dbeafe;
+}
+
+/* Scrollbar styling */
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+.main-content::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+/* Standardized page layout for all pages */
+.page-content {
+  max-width: 1200px;  /* Controls width like Budgets */
+  margin: 0;
+  margin-left: 0;
+  padding: 20px;
+}
+
+/* Ensure cards are positioned left aligned */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+  justify-content: start;
+}
+
+.report-card {
+  background: #0f172a;
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
