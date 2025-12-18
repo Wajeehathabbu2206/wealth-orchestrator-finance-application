@@ -8,6 +8,9 @@ public class WealthOrchestratorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WealthOrchestratorApplication.class, args);
+		
+		System.out.println("Wealth Orchestrator Backend is running...");
+		
 	}
 
 }
