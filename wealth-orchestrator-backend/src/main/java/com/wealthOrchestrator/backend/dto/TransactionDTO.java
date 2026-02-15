@@ -25,7 +25,6 @@ public class TransactionDTO {
 
     private String notes;
 
-    // Getters & Setters
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 

@@ -43,8 +43,6 @@ public class BudgetService {
                 .orElseThrow(() -> new RuntimeException("User not found: " + username));
     }
 
-    // ------------------- CRUD -------------------
-
     public List<Budget> getAllBudgets() {
         return budgetRepo.findByUser(getLoggedUser());
     }
@@ -78,7 +76,7 @@ public class BudgetService {
         getBudget(id).ifPresent(budgetRepo::delete);
     }
 
-    // ------------------- 🔥 Monthly Budget Recalculation -------------------
+    // ------------------- Monthly Budget Recalculation -------------------
 
     public void recalculateSpentAmount(Budget budget) {
 

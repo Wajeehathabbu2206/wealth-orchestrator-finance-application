@@ -15,13 +15,6 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * GoalService
- *
- * - Create / Update / Delete goals (owned by logged user)
- * - Provide public methods to refresh savedAmount & status for a Goal or all Goals of a user
- *   (this allows TransactionService to trigger recalculation on transaction changes)
- */
 @Service
 public class GoalService {
 

@@ -56,7 +56,7 @@ public class AIInsightService {
         return insights;
     }
 
-    // 🔹 Insight: Top Spending Category (last 30 days)
+    // Insight: Top Spending Category (last 30 days)
     private Optional<AIInsightDTO> getTopSpendingCategory(User user) {
         LocalDate fromDate = LocalDate.now().minusDays(30);
 
@@ -89,7 +89,7 @@ public class AIInsightService {
         ));
     }
 
-    // 🔹 Insight: High Budget Usage
+    // Insight: High Budget Usage
     private Optional<AIInsightDTO> getBudgetRiskInsight(User user) {
         List<Budget> budgets = budgetRepo.findByUser(user);
         if (budgets.isEmpty()) return Optional.empty();
@@ -119,7 +119,7 @@ public class AIInsightService {
         ));
     }
 
-    // 🔹 Insight: Best Goal Progress
+    // Insight: Best Goal Progress
     private Optional<AIInsightDTO> getGoalProgressInsight(User user) {
         List<Goal> goals = goalRepo.findByUser(user);
         if (goals.isEmpty()) return Optional.empty();
@@ -152,7 +152,7 @@ public class AIInsightService {
 
         if (achieved) {
             message = "Goal achieved!";
-            severity = "SUCCESS";  // you can return HIGH/MEDIUM if required
+            severity = "SUCCESS";  
         } else {
             message = String.format(
                     "You've achieved %.0f%% of '%s'. Keep going!",
@@ -173,7 +173,7 @@ public class AIInsightService {
     }
 
 
-    // 🔹 Fallback Tips (Ensures Min. 3 Cards)
+    // Fallback Tips 
     private List<AIInsightDTO> getFallbackInsights(int count) {
         List<String> messages = List.of(
                 "Track expenses often — knowledge is power! 💰",

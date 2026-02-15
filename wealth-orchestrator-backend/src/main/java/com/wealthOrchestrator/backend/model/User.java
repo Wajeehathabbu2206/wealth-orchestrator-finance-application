@@ -28,7 +28,6 @@ public class User {
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    // ---------- Relationships ----------
 
     // User → Transactions
     @JsonIgnore
@@ -45,7 +44,6 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Goal> goals = new ArrayList<>();
 
-    // ---------- Getters & Setters ----------
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

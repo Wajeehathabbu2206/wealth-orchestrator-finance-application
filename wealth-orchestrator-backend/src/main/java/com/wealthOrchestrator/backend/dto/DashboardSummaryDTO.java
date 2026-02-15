@@ -16,7 +16,6 @@ public class DashboardSummaryDTO {
         this.thisMonthExpense = thisMonthExpense;
     }
 
-    // Getters
     public double getTotalIncome() { return totalIncome; }
     public double getTotalExpense() { return totalExpense; }
     public double getTotalBalance() { return totalBalance; }

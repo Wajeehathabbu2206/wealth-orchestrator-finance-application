@@ -37,13 +37,12 @@ public class JwtUtil {
                 .parseClaimsJws(token).getBody().getSubject();
     }
 
-    // 🔥 Permanent token for portfolio — even expired tokens are treated as valid
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
             return true;
         } catch (ExpiredJwtException ex) {
-            return true; // token expired but still valid for demo
+            return true; 
         } catch (JwtException ex) {
             return false;
         }

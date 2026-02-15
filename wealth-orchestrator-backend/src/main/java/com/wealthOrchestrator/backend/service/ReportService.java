@@ -35,7 +35,7 @@ public class ReportService {
                 .orElseThrow();
     }
 
-    // 🔹 Summary Report (User-specific)
+    // Summary Report (User-specific)
     public Map<String, Double> getSummary() {
         List<Transaction> txns = repo.findByUser(getLoggedUser());
         int currentMonth = java.time.LocalDate.now().getMonthValue();
@@ -68,7 +68,7 @@ public class ReportService {
         return summary;
     }
 
-    // 🔹 Monthly Trends (User-specific)
+    // Monthly Trends (User-specific)
     public List<ReportDTO> getTrends() {
         List<Transaction> txns = repo.findByUser(getLoggedUser());
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MMM yyyy");
@@ -92,7 +92,7 @@ public class ReportService {
         return new ArrayList<>(grouped.values());
     }
 
-    // 🔹 Category Breakdown (User-specific)
+    // Category Breakdown (User-specific)
     public List<CategoryReportDTO> getCategories() {
         List<Transaction> txns = repo.findByUser(getLoggedUser());
 

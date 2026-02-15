@@ -78,7 +78,7 @@ public class AuthController {
             String token = jwtUtil.generateToken(user.getUsername());
 
             return ResponseEntity.ok(new AuthResponse(
-                    token, // ✅ Send raw token
+                    token, // Send raw token
                     user.getUsername()
             ));
 

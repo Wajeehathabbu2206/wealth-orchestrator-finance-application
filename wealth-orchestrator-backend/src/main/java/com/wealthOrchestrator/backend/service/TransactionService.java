@@ -14,15 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * TransactionService
- *
- * Responsibilities:
- *  - Create / Update / Delete transactions (owned by logged user)
- *  - After create/update/delete: refresh budgets (category-based) and goals (user-based)
- *
- * Note: This service uses BudgetService and GoalService to recalculate spent & saved values.
- */
 @Service
 public class TransactionService {
 
@@ -115,7 +106,6 @@ public class TransactionService {
         // Save (create or update)
         Transaction saved = repo.save(transaction);
 
-        // --- Refresh budgets ---
         // Refresh any budgets linked to the new category
         if (saved.getCategory() != null) {
             refreshBudgetsForCategory(user, saved.getCategory());
@@ -125,16 +115,11 @@ public class TransactionService {
             refreshBudgetsForCategory(user, oldCategory);
         }
 
-        // --- Refresh goals for user (goals are computed from all transactions for that user) ---
-        // Calling this ensures savedAmount/status is recalculated (handles income/expense changes)
         goalService.refreshGoalsForUser(user);
 
         return saved;
     }
 
-    /**
-     * Helper: find budgets of the user with given category (case-insensitive) and recalculate each.
-     */
     private void refreshBudgetsForCategory(User user, String category) {
         if (category == null || category.isBlank()) return;
 
@@ -144,7 +129,6 @@ public class TransactionService {
         for (Budget budget : relatedBudgets) {
             // ask BudgetService to recalculate spentAmount based on transactions in DB
             budgetService.recalculateSpentAmount(budget);
-            // persist updated budget
             budgetRepo.save(budget);
         }
     }

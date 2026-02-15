@@ -21,7 +21,7 @@ public class Transaction {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user; // 🔥 OWNER of this transaction
+    private User user; 
 
     public Transaction() {}
 

@@ -6,7 +6,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update  # <-- TEMPORARY: Reset DB tables
+      ddl-auto: update  
     show-sql: true
     properties:
       hibernate:

@@ -2,11 +2,11 @@ package com.wealthOrchestrator.backend.dto;
 
 public class AIInsightDTO {
 
-    private String type;       // e.g. "SPENDING", "BUDGET", "GOAL"
-    private String title;      // short heading
-    private String message;    // detailed text
-    private String category;   // e.g. "Food", "Rent", "Goals"
-    private String severity;   // "LOW", "MEDIUM", "HIGH"
+    private String type;      
+    private String title;      
+    private String message;    
+    private String category;   
+    private String severity;   
 
     public AIInsightDTO() {}
 

@@ -27,7 +27,7 @@ public class Goal {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user; // 🔥 OWNER
+    private User user; 
 
     public Goal() {}
 
@@ -37,7 +37,6 @@ public class Goal {
         this.deadline = deadline;
     }
 
-    // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
