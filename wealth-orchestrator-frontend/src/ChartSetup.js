@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 
-// 🔹 REQUIRED for Bar & Pie charts to render
+
 ChartJS.register(
   ArcElement,       // Pie charts
   BarElement,       // Bar charts
@@ -19,6 +19,6 @@ ChartJS.register(
   Legend
 );
 
-// 🔹 Optional visual defaults so dark theme works well
+// Optional visual defaults so dark theme works well
 ChartJS.defaults.color = "#e5e7eb";
 ChartJS.defaults.font.family = "Inter, sans-serif";

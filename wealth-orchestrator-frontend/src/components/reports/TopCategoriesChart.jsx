@@ -23,7 +23,7 @@ export default function TopCategoriesChart({ categories }) {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // 🔥 important for height visibility
+    maintainAspectRatio: false, 
     plugins: {
       legend: { display: false },
       tooltip: {

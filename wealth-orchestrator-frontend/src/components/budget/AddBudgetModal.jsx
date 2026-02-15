@@ -8,7 +8,7 @@ export default function AddBudgetModal({ isOpen, onClose, refresh, budgetToEdit 
     limitAmount: "",
   });
 
-  // 🟣 Load edit data safely
+  //  Load edit data safely
   useEffect(() => {
     if (!isOpen) return; // Prevent double triggers
 
@@ -47,7 +47,7 @@ export default function AddBudgetModal({ isOpen, onClose, refresh, budgetToEdit 
         toast.success("Budget Added!");
       }
 
-      refresh(); // 🔥 reload budgets
+      refresh(); //  reload budgets
       window.dispatchEvent(new Event("transaction-updated")); // 🔥 real-time sync with dashboard
 
       onClose();

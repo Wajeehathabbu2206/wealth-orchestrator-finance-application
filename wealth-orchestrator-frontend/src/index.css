@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Global Header & Page Title Styles --- */
+/* Global Header & Page Title Styles */
 h1, h2, h3, h4, h5, h6 {
   color: #f9fafb !important;
 }
@@ -52,9 +52,9 @@ a:hover {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  display: block; /* Sidebar layout restored */
-  background-color: #020617; /* Ensure full dark background */
-  color: #e5e7eb; /* Light text */
+  display: block; 
+  background-color: #020617; 
+  color: #e5e7eb; 
 }
 
 h1 {

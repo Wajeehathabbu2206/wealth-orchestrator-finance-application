@@ -21,13 +21,12 @@ export default function BudgetsPage() {
     }
   };
 
-  // 🔥 Fetch budgets only when refreshTrigger changes
+  // Fetch budgets only when refreshTrigger changes
   useEffect(() => {
     loadBudgets();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refreshTrigger]);
 
-  // 🔥 Listen for transaction updates to auto refresh budgets
+  // Listen for transaction updates to auto refresh budgets
   useEffect(() => {
     const handler = () => setRefreshTrigger(prev => prev + 1);
     window.addEventListener("transaction-updated", handler);
@@ -48,7 +47,7 @@ export default function BudgetsPage() {
   const handleModalClose = () => {
     setModalOpen(false);
     setBudgetToEdit(null);
-    triggerRefresh(); // 🟩 ensure UI updates after add/edit
+    triggerRefresh(); 
   };
 
   return (

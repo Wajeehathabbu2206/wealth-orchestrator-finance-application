@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { useEffect, useState } from "react";
-import api from "../../services/api"; // 🔥 Uses JWT
+import api from "../../services/api"; // Uses JWT
 
 const COLORS = ["#3B82F6", "#10B981", "#FBBF24", "#EC4899", "#8B5CF6", "#F59E0B"];
 

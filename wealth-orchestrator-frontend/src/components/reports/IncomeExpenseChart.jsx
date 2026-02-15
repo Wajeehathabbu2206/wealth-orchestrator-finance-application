@@ -1,5 +1,4 @@
 // src/components/reports/IncomeExpenseChart.jsx
-
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,10 +14,8 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 export default function IncomeExpenseChart({ trends }) {
   if (!trends || trends.length === 0) return <p>No trend data.</p>;
 
-  // Convert month string (e.g. "Nov 2025") into a sortable Date
   const parseMonthToDate = (monthStr) => new Date(monthStr + " 1");
 
-  // Sort dynamically for ANY year/months
   const sortedTrends = [...trends].sort(
     (a, b) => parseMonthToDate(a.month) - parseMonthToDate(b.month)
   );
@@ -33,14 +30,14 @@ export default function IncomeExpenseChart({ trends }) {
       {
         label: "Income",
         data: incomeData,
-        backgroundColor: "rgba(34, 197, 94, 0.7)", // Green
+        backgroundColor: "rgba(34, 197, 94, 0.7)",
         borderColor: "#22c55e",
         borderWidth: 2,
       },
       {
         label: "Expense",
         data: expenseData,
-        backgroundColor: "rgba(239, 68, 68, 0.7)", // Red
+        backgroundColor: "rgba(239, 68, 68, 0.7)", 
         borderColor: "#ef4444",
         borderWidth: 2,
       },

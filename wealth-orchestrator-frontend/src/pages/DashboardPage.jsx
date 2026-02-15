@@ -20,7 +20,7 @@ export default function DashboardPage() {
   useEffect(() => {
     refreshData();
 
-    // 🔥 Listen for updates from transaction modal
+    // Listen for updates from transaction modal
     const updateListener = () => refreshData();
 
     window.addEventListener("transaction-updated", updateListener);
