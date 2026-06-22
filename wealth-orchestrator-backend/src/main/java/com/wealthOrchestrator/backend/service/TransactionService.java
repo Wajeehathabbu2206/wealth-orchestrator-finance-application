@@ -52,9 +52,10 @@ public class TransactionService {
     }
 
     /**
-     * Delete a transaction (only if owned by logged user).
-     * After deletion we refresh budgets for the transaction's category and refresh goals for the user.
+     *Delete a transaction (only if owned by logged user).
+     *After deletion we refresh budgets for the transaction's category and refresh goals for the user.
      */
+    
     public void delete(Long id) {
         Optional<Transaction> maybe = getById(id);
         maybe.ifPresent(tx -> {

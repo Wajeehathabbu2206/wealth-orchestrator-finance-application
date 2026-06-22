@@ -15,6 +15,21 @@ export default function RegisterPage() {
     setError("");
     setMessage("");
 
+    if (!username.trim()) {
+    setError("Username is required");
+    return;
+  }
+
+  if (!email.trim()) {
+    setError("Email is required");
+    return;
+  }
+
+  if (!password.trim()) {
+    setError("Password is required");
+    return;
+  }
+
     try {
       const res = await register(username, email, password);
       setMessage("Registration successful! Redirecting to login...");
