@@ -12,7 +12,7 @@ import { Bar } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 export default function IncomeExpenseChart({ trends }) {
-  if (!trends || trends.length === 0) return <p>No trend data.</p>;
+  if (!trends || trends.length === 0) return <p style={{ color: "#9ca3af" }}>No trend data.</p>;
 
   const parseMonthToDate = (monthStr) => new Date(monthStr + " 1");
 
