@@ -27,6 +27,11 @@ public class User {
     private String role = "ROLE_USER";
 
     private LocalDateTime createdAt = LocalDateTime.now();
+    
+    @Column(length = 255)
+    private String resetToken;
+
+    private LocalDateTime resetTokenExpiry;
 
 
     // User → Transactions
@@ -71,4 +76,21 @@ public class User {
 
     public List<Goal> getGoals() { return goals; }
     public void setGoals(List<Goal> goals) { this.goals = goals; }
+    
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
+    }
+
+    public LocalDateTime getResetTokenExpiry() {
+        return resetTokenExpiry;
+    }
+
+    public void setResetTokenExpiry(LocalDateTime resetTokenExpiry) {
+        this.resetTokenExpiry = resetTokenExpiry;
+    }
 }
+
